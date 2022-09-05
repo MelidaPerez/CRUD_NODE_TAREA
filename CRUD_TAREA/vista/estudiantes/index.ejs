@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTUDIANTES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">    
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" >MENU</a>
+          <li class="nav-item">
+            <a class="nav-link" href="estudiantes/index">Estudiantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sangre/sangreform" >Tipo Sangre</a>
+          </li>
+      </nav>
+      
+    <h1>Formulario Estudiantes</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <form action="/crud_e" method="post">
+        <input class="form-control" type="text" id="txt_id" name="txt_id" placeholder="0">
+        <br>
+        <input class="form-control" type="text" id="txt_carne" name="txt_carne" placeholder="carne">
+        <br>
+        <input class="form-control" type="text" id="txt_nombres" name="txt_nombres" placeholder="Nombres">
+        <br>
+        <input class="form-control" type="text" id="txt_apellidos" name="txt_apellidos" placeholder="Apellidos">
+        <br>
+        <input class="form-control" type="text" id="txt_direccion" name="txt_direccion" placeholder="Direccion">
+        <br>
+        <input class="form-control" type="text" id="txt_telefono" name="txt_telefono" placeholder="Telefono">
+        <br>
+        <input class="form-control" type="text" id="txt_correo" name="txt_correo" placeholder="Correo">
+        <br>
+        <input class="form-control" type="text" id="txt_idsangre" name="txt_idsangre" placeholder="Idsangre">
+        <br>
+        <input class="form-control" type="date" id="txt_fn" name="txt_fn" placeholder="yyyy-MM-dd">
+        <br>
+        <button type="button" class="btn btn-primary" id="btn_crear" name="btn_crear" value="crear">Crear</button>
+       <button type="button" class="btn btn-success" id="btn_actualizar" name="btn_actualizar" value="actializar">Actualizar</button>
+       <button type="button" class="btn btn-danger"  id="btn_borrar" name="btn_borrar" value="borrar">Borrar</button>
+    </form> 
+    <table class="table" border="1px">
+        <thead>
+            
+                <th>id</th>
+                <th>carne</th>
+                <th>nombres</th>
+                <th>apellidos</th>
+                <th>direccion</th>
+                <th>telefono</th>
+                <th>correo</th>
+                <th>idsangre</th>
+                <th>nacimiento</th>
+            
+        </thead>
+        <tbody>
+           <% resultado.forEach((estudiante) => { %>
+           
+            <tr>
+                <td><%= estudiante.id_estudiante %></td>
+                <td><%= estudiante.carne %></td>
+                <td><%= estudiante.nombres %></td>
+                <td><%= estudiante.apellidos %></td>
+                <td><%= estudiante.direccion %></td>
+                <td><%= estudiante.telefono %></td>
+                <td><%= estudiante.correo_electronico %></td>
+                <td><%= estudiante.id_tipo_sangre %></td>
+                <td><%= estudiante.fecha_nacimiento %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+</body>
+</html>
